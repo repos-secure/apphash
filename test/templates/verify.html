@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+ "http://www.w3.org/TR/html4/strict.dtd"> 
+<html> 
+<head> 
+    <title>sha256 test</title> 
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head> 
+<body> 
+    <!--(for i in js)-->
+        <script type="text/javascript">$!i!$</script>
+    <!--(end)-->
+    <h1> apphash_verify tests </h1>
+
+    <table border="1px" cellpadding="5px">
+        <tr>
+            <th> pass </th>
+            <th> apphash_verify </th>
+            <th> test string </th>
+        </tr>
+    <!--(for i in tstrings)-->
+        <tr>
+            <td id="pass@!i.i!@"></td>
+            <td><pre id="check@!i.i!@"></pre></td>
+            <td><pre>$!i.raw!$</pre></td>
+        </tr>
+    <!--(end)-->
+    </table>
+    <script type="text/javascript">
+        $(function(){
+            <!--(for i in tstrings)-->
+                r = apphash_verify("$!i.quoted!$", "$!i.hash!$");
+                $("#check"+"@!i.i!@").html("" + r);
+                if (r == "@!str(i.expected).lower()!@")
+                    $("#pass"+ @!i.i!@).css({"background-color": "green"});
+                else
+                    $("#pass"+ @!i.i!@).css({"background-color": "red"});
+                
+            <!--(end)-->
+        })
+    </script>
+</body> 
+</html>
+

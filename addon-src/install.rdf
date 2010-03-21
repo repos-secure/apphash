@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+	<Description about="urn:mozilla:install-manifest">
+		<em:id>client@apphash.org</em:id>
+		<em:name>apphash</em:name>
+		<em:version>0.0.1</em:version>
+		<em:description>Host-proof application validator</em:description>
+		<em:creator>Aldo Cortesi</em:creator>
+		<em:homepageURL>http://apphash.org</em:homepageURL>
+		<em:aboutURL>chrome://apphash/content/about.xul</em:aboutURL>
+		<em:targetApplication>
+			<Description>
+				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+				<em:minVersion>3.5</em:minVersion>
+				<em:maxVersion>3.6.*</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+	</Description>
+</RDF>

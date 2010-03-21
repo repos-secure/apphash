@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+ "http://www.w3.org/TR/html4/strict.dtd"> 
+<html> 
+<head> 
+    <title>sha256 test</title> 
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head> 
+<body> 
+    <!--(for i in js)-->
+        <script type="text/javascript">$!i!$</script>
+    <!--(end)-->
+    <h1> apphash_split tests </h1>
+
+    <table border="1px" cellpadding="5px">
+        <tr>
+            <th> test string </th>
+            <th> base </th>
+            <th> hostile </th>
+        </tr>
+    <!--(for i in enumerate(teststrings))-->
+        <tr>
+            <td><pre>$!i[1]!$</pre></td>
+            <td><pre id="base@!i[0]!@"></pre></td>
+            <td><pre id="hostile@!i[0]!@"></pre></td>
+        </tr>
+    <!--(end)-->
+    </table>
+    <script type="text/javascript">
+        $(function(){
+            <!--(for i in enumerate(escstrings))-->
+                r = apphash_split("$!i[1]!$");
+                $("#base"+"@!i[0]!@").html(r.base.quote());
+                if (r.hostile)
+                    $("#hostile"+"@!i[0]!@").html(r.hostile.quote());
+            <!--(end)-->
+        })
+    </script>
+</body> 
+</html>
+

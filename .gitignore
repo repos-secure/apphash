@@ -1,0 +1,9 @@
+addon
+*.xpi
+apphash
+*.py[cd]
+*.swp
+*.swo
+/build
+/dist
+/doc

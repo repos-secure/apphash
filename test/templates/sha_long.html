@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+ "http://www.w3.org/TR/html4/strict.dtd"> 
+<html> 
+<head> 
+    <title>sha256 test</title> 
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head> 
+<body> 
+    <!--(for i in js)-->
+        <script type="text/javascript">$!i!$</script>
+    <!--(end)-->
+    <h1> SHA256 tests </h1>
+
+    <table border="1px" cellpadding="5px">
+        <tr>
+            <th> match </th>
+            <th> length </th>
+        </tr>
+
+    <!--(for i in range(numstrings))-->
+        <tr>
+            <td id="match@!i!@"></td>
+            <td id="len@!i!@"></td>
+        </tr>
+    <!--(end)-->
+    </table>
+    <script type="text/javascript">
+        $(function(){
+            var teststrings = eval($!teststrings!$);
+            var hashes = eval($!hashes!$);
+            for (var i=0; i < teststrings.length; i++){
+                var x = SHA256.hash_string(teststrings[i]);
+                $("#len"+i).html(teststrings[i].length);
+                if (x == hashes[i])
+                    $("#match"+i).css({"background-color": "green"});
+                else 
+                    $("#match"+i).css({"background-color": "red"});
+            }
+        })
+    </script>
+</body> 
+</html>
+
