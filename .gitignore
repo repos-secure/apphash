@@ -1,6 +1,5 @@
-addon
 *.xpi
-apphash
+/apphash
 *.py[cd]
 *.swp
 *.swo

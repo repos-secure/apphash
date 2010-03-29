@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://apphash/content/failure.css" type="text/css"?>
+<!DOCTYPE page SYSTEM "-//W3C//DTD XHTML 1.0 Strict//EN">
+<page class="page"
+	title="about"
+	orient="vertical"
+	autostretch="always"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <vbox id="main">
+      <text value="apphash verification failure" style="font-weight: bold; font-size: x-large; color: red;"/>
+      <separator class="thin"/>
+    </vbox>
+</page>

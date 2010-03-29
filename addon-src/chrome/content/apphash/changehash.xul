@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/"?>
+<?xml-stylesheet href="chrome://mozapps/content/preferences/preferences.css" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/skin/preferences/preferences.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "-//W3C//DTD XHTML 1.0 Strict//EN">
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        buttons="accept,cancel"
+        id="change-hash"
+        width="400" height="200"
+        title="edit hash"
+        onload="onLoad();"
+        ondialogaccept="return onAccept();"
+        persist="screenX screenY">
+
+  <script><![CDATA[
+      var item;
+
+      function onLoad(){
+         item = window.arguments[0];
+         if (item.name)
+             document.getElementById("name").value = item.name;
+         if (item.regex)
+             document.getElementById("regex").value = item.regex;
+         if (item.hash)
+             document.getElementById("hash").value = item.hash;
+         onChange();
+      }
+
+      function onAccept(){
+        item.name = document.getElementById("name").value;
+        item.regex = document.getElementById("regex").value;
+        item.hash = document.getElementById("hash").value;
+        window.arguments[1].saveChanges = true;
+      }
+
+      function onChange() {
+        if (
+                document.getElementById("name").value &&
+                document.getElementById("regex").value &&
+                document.getElementById("hash").value
+            ) 
+              document.documentElement.getButton("accept").disabled = false;
+        else
+              document.documentElement.getButton("accept").disabled = true;
+      }
+  ]]></script>
+  <vbox flex="1">
+      <hbox>
+         <label control="name" align="baseline">name</label>
+         <textbox id="name" flex="1" oninput="onChange()"/>
+      </hbox>
+      <separator class="thin"/>
+      <hbox>
+         <label control="executable" align="baseline">regex</label>
+         <textbox id="regex" flex="1" oninput="onChange()"/>
+      </hbox>
+      <separator class="thin"/>
+      <hbox align="center">
+          <label control="cmdline">hash</label>
+          <textbox id="hash" flex="1" oninput="onChange()"/>
+      </hbox>
+  </vbox>
+</dialog>

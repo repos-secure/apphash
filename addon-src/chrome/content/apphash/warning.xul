@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://pvalidator/locale/pvalidator.dtd">
+<window class="dialog"
+        title="apphash: verification failed"
+        orient="vertical"
+        autostretch="always"
+        onload="sizeToContent()"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <script type="application/x-javascript" src="chrome://apphash/content/apphashOverlay.js">
+    </script>
+    <vbox>
+      <text value="apphash: verification has failed" style="font-weight: bold; font-size: x-large;"/>
+      <spacer flex="1"/>
+      <text value="what to do next:" style="font-size: x-large;"/>
+      <hbox>
+          <text value="check twitter: " style="font-size: large;"/>
+          <text value="#apphash"
+                style="color: blue; text-decoration: underline;"
+                onclick="window.open('http://search.twitter.com/q=#apphash');"/>
+      </hbox>
+      <text value="check the github page for updates" style="font-size: large;"/>
+    </vbox>
+
+  <hbox>
+      <spacer flex="1"/>
+      <button label="close" oncommand="window.close();"/>
+  </hbox>
+</window>
