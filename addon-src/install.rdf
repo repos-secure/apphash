@@ -4,7 +4,7 @@ xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 	<Description about="urn:mozilla:install-manifest">
 		<em:id>client@apphash.org</em:id>
 		<em:name>apphash</em:name>
-		<em:version>0.0.1</em:version>
+		<em:version>0.0.2</em:version>
 		<em:description>Host-proof application validator</em:description>
 		<em:creator>Aldo Cortesi</em:creator>
 		<em:homepageURL>http://apphash.org</em:homepageURL>
